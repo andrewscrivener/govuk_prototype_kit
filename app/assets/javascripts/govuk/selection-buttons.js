@@ -6,8 +6,6 @@
   if (typeof GOVUK === 'undefined') { root.GOVUK = {}; }
 
   var SelectionButtons = function (elmsOrSelector, opts) {
-    var $elms;
-
     this.selectedClass = 'selected';
     this.focusedClass = 'focused';
     if (opts !== undefined) {
@@ -16,7 +14,7 @@
       }.bind(this));
     }
     if (typeof elmsOrSelector === 'string') {
-      $elms = $(elmsOrSelector);
+      this.$elms = $(elmsOrSelector);
       this.selector = elmsOrSelector;
       this.setInitialState($(this.selector));
     } else if (elmsOrSelector !== undefined) {
